@@ -46,8 +46,22 @@
                         <input type="text" id="saju-name" placeholder="이름">
                     </div>
                     <div class="form-group">
+                        <label>성별</label>
+                         <div>
+                            <input type="radio" id="saju-male" name="gender" value="male" checked> <label for="saju-male">남자</label>
+                            <input type="radio" id="saju-female" name="gender" value="female"> <label for="saju-female">여자</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="saju-birthdate">생년월일</label>
                         <input type="date" id="saju-birthdate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>달력</label>
+                        <div>
+                            <input type="radio" id="saju-solar" name="calendar" value="solar" checked> <label for="saju-solar">양력</label>
+                            <input type="radio" id="saju-lunar" name="calendar" value="lunar"> <label for="saju-lunar">음력</label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="saju-birthtime">출생시간</label>
@@ -66,22 +80,6 @@
                             <option value="10">19:30 ~ 21:29 (술시)</option>
                             <option value="11">21:30 ~ 23:29 (해시)</option>
                         </select>
-                    </div>
-                    <div class="form-group-inline">
-                        <div class="form-group">
-                            <label>달력</label>
-                            <div>
-                                <input type="radio" id="saju-solar" name="calendar" value="solar" checked> <label for="saju-solar">양력</label>
-                                <input type="radio" id="saju-lunar" name="calendar" value="lunar"> <label for="saju-lunar">음력</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>성별</label>
-                             <div>
-                                <input type="radio" id="saju-male" name="gender" value="male" checked> <label for="saju-male">남자</label>
-                                <input type="radio" id="saju-female" name="gender" value="female"> <label for="saju-female">여자</label>
-                            </div>
-                        </div>
                     </div>
                     <button type="submit" class="submit-btn">결과 보기</button>
                 </form>
