@@ -17,17 +17,29 @@
         </header>
 
         <nav class="tab-nav">
-            <button class="tab-link active" data-tab="saju">사주팔자</button>
-            <button class="tab-link" data-tab="today">오늘의 운세</button>
-            <button class="tab-link" data-tab="astro">점성술</button>
-            <button class="tab-link" data-tab="love">연애운</button>
+            <button class="tab-link active" data-tab="saju">
+                <div class="tab-shape shape-square"></div>
+                <span class="tab-text">사주팔자</span>
+            </button>
+            <button class="tab-link" data-tab="today">
+                <div class="tab-shape shape-circle"></div>
+                <span class="tab-text">오늘의 운세</span>
+            </button>
+            <button class="tab-link" data-tab="astro">
+                <div class="tab-shape shape-triangle"></div>
+                <span class="tab-text">점성술</span>
+            </button>
+            <button class="tab-link" data-tab="love">
+                <div class="tab-shape shape-hexagon"></div>
+                <span class="tab-text">연애운</span>
+            </button>
         </nav>
 
         <main class="content-area">
+            <p id="current-tab-description" class="section-description"></p>
             <!-- 탭 1: 사주팔자 -->
             <section id="saju" class="tab-content active">
                 <h2>사주팔자 분석</h2>
-                <p class="section-description">타고난 기운을 통해 자신의 성향과 삶의 흐름을 이해합니다.</p>
                 <form id="saju-form" class="input-form">
                     <div class="form-group">
                         <label for="saju-name">이름 (선택)</label>
@@ -44,7 +56,16 @@
                             <option value="0">00:00 ~ 01:29 (자시)</option>
                             <option value="1">01:30 ~ 03:29 (축시)</option>
                             <option value="2">03:30 ~ 05:29 (인시)</option>
-                            <!-- ... 나머지 시간대 ... -->
+                            <option value="3">03:30 ~ 05:29 (묘시)</option>
+                            <option value="4">05:30 ~ 07:29 (진시)</option>
+                            <option value="5">07:30 ~ 09:29 (사시)</option>
+                            <option value="6">09:30 ~ 11:29 (오시)</option>
+                            <option value="7">11:30 ~ 13:29 (미시)</option>
+                            <option value="8">13:30 ~ 15:29 (신시)</option>
+                            <option value="9">15:30 ~ 17:29 (유시)</option>
+                            <option value="10">17:30 ~ 19:29 (술시)</option>
+                            <option value="11">19:30 ~ 21:29 (해시)</option>
+                            <option value="12">21:30 ~ 23:29 (자시)</option>
                         </select>
                     </div>
                     <div class="form-group-inline">
@@ -71,7 +92,6 @@
             <!-- 탭 2: 오늘의 운세 -->
             <section id="today" class="tab-content">
                 <h2>오늘의 운세</h2>
-                <p class="section-description">매일 새롭게 주어지는 하루의 지침을 확인하세요.</p>
                 <form id="today-form" class="input-form">
                      <div class="form-group">
                         <label for="today-birthdate">생년월일 (선택)</label>
@@ -86,7 +106,6 @@
             <!-- 탭 3: 점성술 -->
             <section id="astro" class="tab-content">
                 <h2>나의 별자리 찾기</h2>
-                <p class="section-description">서양 점성술을 통해 당신의 성향과 가능성을 발견하세요.</p>
                 <form id="astro-form" class="input-form">
                     <div class="form-group">
                         <label for="astro-birthdate">생년월일</label>
@@ -104,7 +123,6 @@
             <!-- 탭 4: 연애운 -->
             <section id="love" class="tab-content">
                 <h2>연애운</h2>
-                <p class="section-description">사랑의 기운과 관계의 흐름에 대한 조언을 얻으세요.</p>
                 <form id="love-form" class="input-form">
                     <div class="form-group">
                         <label for="love-my-birthdate">나의 생년월일</label>

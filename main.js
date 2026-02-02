@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DOM 요소 선택 ---
     const tabs = document.querySelectorAll('.tab-link');
     const contents = document.querySelectorAll('.tab-content');
+    const currentTabDescriptionElement = document.getElementById('current-tab-description');
 
     // 탭별 폼 및 결과 영역
     const sajuForm = document.getElementById('saju-form');
@@ -20,6 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const JI = ['자', '축', '인', '묘', '진', '사', '오', '미', '신', '유', '술', '해'];
     const OHAENG_KOR = ['목', '화', '토', '금', '수'];
 
+    const tabDescriptions = {
+        saju: "타고난 기운을 통해 자신의 성향과 삶의 흐름을 이해합니다.",
+        today: "매일 새롭게 주어지는 하루의 지침을 확인하세요.",
+        astro: "서양 점성술을 통해 당신의 성향과 가능성을 발견하세요.",
+        love: "사랑의 기운과 관계의 흐름에 대한 조언을 얻으세요."
+    };
+
     // --- 이벤트 리스너 ---
 
     // 탭 전환 로직
@@ -36,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     content.classList.add('active');
                 }
             });
+            updateCurrentTabDescription(tabName); // 설명 업데이트
         });
     });
 
@@ -408,6 +417,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return null;
     }
 
+    // --- 설명 업데이트 함수 ---
+    function updateCurrentTabDescription(tabId) {
+        currentTabDescriptionElement.textContent = tabDescriptions[tabId];
+    }
+
     // --- 초기화 ---
     function init() {
         const sajuInputs = loadInputs('saju');
@@ -435,6 +449,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('love-my-birthdate').value = loveInputs.myBirthdate || '';
             document.getElementById('love-partner-birthdate').value = loveInputs.partnerBirthdate || '';
             document.getElementById('love-status').value = loveInputs.status || 'crush';
+        }
+
+        // 초기 로드 시 첫 번째 탭 설명 설정
+        const activeTab = document.querySelector('.tab-link.active');
+        if (activeTab) {
+            updateCurrentTabDescription(activeTab.dataset.tab);
         }
     }
 
